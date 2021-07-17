@@ -1,5 +1,5 @@
 # APT37-Emulation-plan
-APT37 is a North Korea cyber group. In this project our main focus is to Eulate the plan of this group.
+APT37 is a North Korea cyber group. In this project our main focus is to Emulate the plan of this group.
 Initially we will analyze what techniques they use and then we will see in what scenarios the attack is executed.
 As per the Mitre Att&ck framework we are going to analyse each stage of the attack
 1. Initial access : APT37 uses Drive by Compromise  and Phishing emails for gaining initial access. They compromise websites to send malware or phishing emails to victims.
