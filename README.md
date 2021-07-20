@@ -13,3 +13,64 @@ They use flaws in client applications like web browsers, Flash players and Micro
 // Extra **Check for processes running when you boot your system
 3. Persistence : Using registry keys and startup folder, execution of the malware takes place when the system boots. 
 // Extra ** registry key check and analyse the processes running when system boot is suggested 
+4. Privilege Escalation
+5. Defense Evasion
+6. Credential access
+7. Discovery
+8. Lateral Movement
+9. Collection
+10. Command and control
+11. Exfilteration
+12. Impact
+
+Relate to Mitre matrix
+Cyber kill chain process :
+1. Reconnaissance: Intruder selects target, researches it, and attempts to identify vulnerabilities in the target network.
+Weaponization: Intruder creates remote access malware weapon, such as a virus or worm, tailored to one or more vulnerabilities.
+Delivery: Intruder transmits weapon to target (e.g., via e-mail attachments, websites or USB drives)
+Exploitation: Malware weapon's program code triggers, which takes action on target network to exploit vulnerability.
+Installation: Malware weapon installs access point (e.g., "backdoor") usable by intruder.
+Command and Control: Malware enables intruder to have "hands on the keyboard" persistent access to target network.
+Actions on Objective: Intruder takes action to achieve their goals, such as data exfiltration, data destruction, or encryption for ransom.
+
+Malware Analysis :
+1. How they exploit the client applications and stay persistent
+2. analyze the code ( try to undertand)
+3. Payload modiication( a try)
+4. IOC's 
+
+Attack Scenario :
+
+
+
+Malware Used
+CORALDECK - Exfiltration tool
+DOGCALL - Backdoor tool
+GELCAPSULE - Downloader for additional malware
+HAPPYWORK - Downloader for additional malware, exfiltration tool
+KARAE - Backdoor tool
+MILKDROP - Set registry to gain persistence, launches backdoor
+POORAIM - Backdoor and exfiltration tool
+RICECURRY - Browser profiler used to decide what malware to deliver
+RUHAPPY - Disk wiper
+SHUTTERSPEED - Backdoor and exfiltration tool
+SLOWDRIFT - Downloader for additional malware
+SOUNDWAVE - Audio capture utility
+WINERACK - Backdoor
+ZUMKONG - Credential stealer
+
+Vulnerabilities Exploited
+ CVE-2013-4979 - Buffer overflow in EPS Viewer
+ CVE-2014-8439 - Adobe Flash execution of arbitrary code
+ CVE-2015-2387 - Windows Adobe Type Manager Font Driver elevation of privileges
+ CVE-2015-2419 - JScript 9 in Internet Explore 10 and 11 execution of arbitrary code
+ CVE-2015-2545 - Microsoft Office execution of arbitrary code
+ CVE-2015-3105 - Adobe Flash execution of arbitrary code
+ CVE-2015-5119 - Adobe Flash execution of arbitrary code
+ CVE-2015-5122 - Adobe Flash execution of arbitrary code
+ CVE-2015-7645 - Adobe Flash execution of arbitrary code
+ CVE-2016-1019 - Adobe Flash execution of arbitrary code
+ CVE-2016-4117 - Adobe Flash execution of arbitrary code
+ CVE-2017-0199 - Microsoft Office / WordPad execution of arbitrary code
+ CVE-2018-0802 - Equation Editor in Microsoft Office execution of arbitrary code
+ CVE-2018-4878 - Adobe Flash execution of arbitrary code
