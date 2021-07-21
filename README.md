@@ -1,55 +1,59 @@
-#APT37 - Emulation Plan
 APT37 is a North Korea cyber group. North Korean Cyber Espionage group known to target vicitims from South Korea, Japanm Russia, India, Nepal, etc. In this project our main focus is to Emulate the plan of this group. Initially we will analyze what techniques they use and then we will see in what scenarios the attack is executed. As per the Mitre Att&ck framework we are going to analyse each stage of the attack.
 
 Also Known as
+1.ScarCruft
+2.Reaper
+3.Group123
+4.TEMP.Reaper
 
-ScarCruft
-Reaper
-Group123
-TEMP.Reaper
 Famous Operations/Campaigns
+1.Operation Daybreak
+2.Operation Erebus
+3.Golden Time
+4.Evil New Year
 
-Operation Daybreak
-Operation Erebus
-Golden Time
-Evil New Year
 This folder has emulation plans for APT37 as threat actor, and a simulation playbook along with detection tactics and analysis of malwares and exploitations used APT37.
 
-Initial access : APT37 uses Drive by Compromise and Phishing emails for gaining initial access. They compromise websites to send malware or phishing emails to victims. They change the phishing email contents based on the on-going issues to make it look legit. Use of torrent files also used to share the malware.
+1.Initial access : APT37 uses Drive by Compromise and Phishing emails for gaining initial access. They compromise websites to send malware or phishing emails to victims. They change the phishing email contents based on the on-going issues to make it look legit. Use of torrent files also used to share the malware.
 
-Execution phase : They use vulnerabilities in Flash player, word for executing the malware. Malwares mentioned below and the cve's as well. VB scripts are sent(related to .Net framework). IPC(Inter process communication) techniques are used such as Dynamic Data Exchange to maintain a link between the process.They use flaws in client applications like web browsers, Flash player and Microsoft office file. or Used Native API to execute code along with the local OS processes. APT37 has used Flash Player (CVE-2016-4117, CVE-2018-4878) and Word (CVE-2017-0199) exploits for execution. Links : cve-2016-4117 : https://www.fireeye.com/blog/threat-research/2016/05/cve-2016-4117-flash-zero-day.html // Extra ***Other techniques that can be used COm(Common object model) to execute code in local or Used Native API to execute code along with the local OS processes. // Extra ** .Net code inside the downloaded file is suspicious They use flaws in client applications like web browsers, Flash players and Microsoft office files. // Extra **Check for processes running when you boot your system
+2.Execution phase : They use vulnerabilities in Flash player, word for executing the malware. Malwares mentioned below and the cve's as well. VB scripts are sent(related to .Net framework). IPC(Inter process communication) techniques are used such as Dynamic Data Exchange to maintain a link between the process.They use flaws in client applications like web browsers, Flash player and Microsoft office file. or Used Native API to execute code along with the local OS processes. APT37 has used Flash Player (CVE-2016-4117, CVE-2018-4878) and Word (CVE-2017-0199) exploits for execution. Links : cve-2016-4117 : https://www.fireeye.com/blog/threat-research/2016/05/cve-2016-4117-flash-zero-day.html // Extra ***Other techniques that can be used COm(Common object model) to execute code in local or Used Native API to execute code along with the local OS processes. // Extra ** .Net code inside the downloaded file is suspicious They use flaws in client applications like web browsers, Flash players and Microsoft office files. // Extra **Check for processes running when you boot your system
 
-Persistence : Using registry keys and startup folder, execution of the malware takes place when the system boots.They has added persistence via the Registry key HKCU\Software\Microsoft\CurrentVersion\Run\ // Extra ** registry key check and analyse the processes running when system boot is suggested.
+3.Persistence : Using registry keys and startup folder, execution of the malware takes place when the system boots.They has added persistence via the Registry key HKCU\Software\Microsoft\CurrentVersion\Run\ // Extra ** registry key check and analyse the processes running when system boot is suggested.
 
-Privilege Escalation: They inject malware varient ROKRAT into cmd.exe or explorer.exe. They use Windows User Account Control (UAC) allows a program to elevate its privileges. Link ROKRAT: https://research.nccgroup.com/2018/11/08/rokrat-analysis/ UAC : https://github.com/hfiref0x/UACME
+4.Privilege Escalation: They inject malware varient ROKRAT into cmd.exe or explorer.exe. They use Windows User Account Control (UAC) allows a program to elevate its privileges. Link ROKRAT: https://research.nccgroup.com/2018/11/08/rokrat-analysis/ UAC : https://github.com/hfiref0x/UACME
 
-Defense Evasion : They used has signed its malware with an invalid digital certificates listed as "Tencent Technology (Shenzhen) Company Limited to evade the dettection from tools and from analysts. they use uses steganography to send images to users that are embedded with shellcode.
+5.Defense Evasion : They used has signed its malware with an invalid digital certificates listed as "Tencent Technology (Shenzhen) Company Limited to evade the dettection from tools and from analysts. they use uses steganography to send images to users that are embedded with shellcode.
 
-Credential access : They use has used a credential stealer known as ZUMKONG that can harvest usernames and passwords stored in browsers.
+6.Credential access : They use has used a credential stealer known as ZUMKONG that can harvest usernames and passwords stored in browsers.
 
-Discovery : They has a has a Bluetooth device harvester, which uses Windows Bluetooth APIs to find information on connected Bluetooth devices for peripheral process discovery. They use Freenki malware lists running processes using the Microsoft Windows API(process discovery). they collect the computer name, the BIOS model, and execution path and also identifies the victim username Bluetooth Harvester : https://securelist.com/scarcruft-continues-to-evolve-introduces-bluetooth-harvester/90729/
+7.Discovery : They has a has a Bluetooth device harvester, which uses Windows Bluetooth APIs to find information on connected Bluetooth devices for peripheral process discovery. They use Freenki malware lists running processes using the Microsoft Windows API(process discovery). they collect the computer name, the BIOS model, and execution path and also identifies the victim username Bluetooth Harvester : https://securelist.com/scarcruft-continues-to-evolve-introduces-bluetooth-harvester/90729/
 
-Lateral Movement : N/A
+8.Lateral Movement : N/A
 
-Collection :
+9.Collection :
 
-Command and control
+10.Command and control
 
-Exfilteration
+11.Exfilteration
 
-Impact
+12.Impact
 
 Relate to Mitre matrix Cyber kill chain process :
 
-Reconnaissance: Intruder selects target, researches it, and attempts to identify vulnerabilities in the target network. Weaponization: Intruder creates remote access malware weapon, such as a virus or worm, tailored to one or more vulnerabilities. Delivery: Intruder transmits weapon to target (e.g., via e-mail attachments, websites or USB drives) Exploitation: Malware weapon's program code triggers, which takes action on target network to exploit vulnerability. Installation: Malware weapon installs access point (e.g., "backdoor") usable by intruder. Command and Control: Malware enables intruder to have "hands on the keyboard" persistent access to target network. Actions on Objective: Intruder takes action to achieve their goals, such as data exfiltration, data destruction, or encryption for ransom.
-Malware Analysis :
+1.Reconnaissance: Intruder selects target, researches it, and attempts to identify vulnerabilities in the target network.
+2.Weaponization: Intruder creates remote access malware weapon, such as a virus or worm, tailored to one or more vulnerabilities.
+3.Delivery: Intruder transmits weapon to target (e.g., via e-mail attachments, websites or USB drives) Exploitation: Malware weapon's program code triggers, which takes action on target network to exploit vulnerability. 
+4.Installation: Malware weapon installs access point (e.g., "backdoor") usable by intruder. 
+5.Command and Control: Malware enables intruder to have "hands on the keyboard" persistent access to target network. 
+5.Actions on Objective: Intruder takes action to achieve their goals, such as data exfiltration, data destruction, or encryption for ransom.
 
+Malware Analysis :
 How they exploit the client applications and stay persistent
 analyze the code ( try to undertand)
 Payload modiication( a try)
 IOC's
-Attack Scenario :
 
+Attack Scenario :
 
 
 Malware Used
