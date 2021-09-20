@@ -1,4 +1,4 @@
-APT37 is a North Korea cyber group. North Korean Cyber Espionage group known to target vicitims from South Korea, Japanm Russia, India, Nepal, etc. In this project our main focus is to Emulate the plan of this group. Initially we will analyze what techniques they use and then we will see in what scenarios the attack is executed. As per the Mitre Att&ck framework we are going to analyse each stage of the attack.
+APT37 is a North Korea cyber group. North Korean Cyber Espionage group known to target vicitims from South Korea, Japan, Russia, India, Nepal, etc. In this project our main focus is to Emulate the plan of this group. Initially we will analyze what techniques they use and then we will see in what scenarios the attack is executed. As per the Mitre Att&ck framework we are going to analyse each stage of the attack.
 
 Also Known as
 1.ScarCruft
@@ -23,7 +23,7 @@ This folder has emulation plans for APT37 as threat actor, and a simulation play
 
 3.Persistence : Using registry keys and startup folder, execution of the malware takes place when the system boots.They has added persistence via the Registry key HKCU\Software\Microsoft\CurrentVersion\Run\ // Extra ** registry key check and analyse the processes running when system boot is suggested.
 
-4.Privilege Escalation: They inject malware varient ROKRAT into cmd.exe or explorer.exe. They use Windows User Account Control (UAC) allows a program to elevate its privileges. Link ROKRAT: https://research.nccgroup.com/2018/11/08/rokrat-analysis/ UAC : https://github.com/hfiref0x/UACME
+4.Privilege Escalation: They inject malware varient ROKRAT into cmd.exe or explorer.exe. They use Windows User Account Control (UAC) which allows a program to elevate its privileges. Link ROKRAT: https://research.nccgroup.com/2018/11/08/rokrat-analysis/ UAC : https://github.com/hfiref0x/UACME
 
 5.Defense Evasion : They used has signed its malware with an invalid digital certificates listed as "Tencent Technology (Shenzhen) Company Limited to evade the dettection from tools and from analysts. they use uses steganography to send images to users that are embedded with shellcode.
 
@@ -33,13 +33,13 @@ This folder has emulation plans for APT37 as threat actor, and a simulation play
 
 8.Lateral Movement : N/A
 
-9.Collection :
+9.Collection : Exploting audio capture utility SOUNDWAVE has given access to capture the microphone input. these audio files can be stored on a disk and later can be exfilterated. It also collects data(files or local data base) from the local machine using cmd or automated collection. 
 
-10.Command and control
+10.Command and control: downloads second stage of malware from te compromised websites, they have used mail servers and cloud service providers as C2C infrostructure as to cover tracks.And aslo uses social netwroking sites and used torrent to distribute the malwrae
 
-11.Exfilteration
+11.Exfilteration : Uses CORALDECK malware to seach for files and exfilter them in a password protected files using HTTP post request.
 
-12.Impact
+12.Impact : Malare used by this group shoutdowns the machine after wiping the MBR. and other malware has a capcity to overrite the MBR.
 
 Relate to Mitre matrix Cyber kill chain process :
 
