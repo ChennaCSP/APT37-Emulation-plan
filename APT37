@@ -33,13 +33,13 @@ This folder has emulation plans for APT37 as threat actor, and a simulation play
 
 8.Lateral Movement : N/A
 
-9.Collection :
+9.Collection : Exploting audio capture utility SOUNDWAVE has given access to capture the microphone input. these audio files can be stored on a disk and later can be exfilterated. It also collects data(files or local data base) from the local machine using cmd or automated collection.
 
-10.Command and control
+10.Command and control: downloads second stage of malware from te compromised websites, they have used mail servers and cloud service providers as C2C infrostructure as to cover tracks.And aslo uses social netwroking sites and used torrent to distribute the malwrae
 
-11.Exfilteration
+11.Exfilteration : Uses CORALDECK malware to seach for files and exfilter them in a password protected files using HTTP post request.
 
-12.Impact
+12.Impact : Malare used by this group shoutdowns the machine after wiping the MBR. and other malware has a capcity to overrite the MBR.
 
 Relate to Mitre matrix Cyber kill chain process :
 
