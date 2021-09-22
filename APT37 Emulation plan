@@ -4,6 +4,6 @@ Emulation plan APT37
 3. Analyzing the data
 4. Running emulation on the victim machine and analyszing data based on the mitre matix
 5. Enabling some mitigations and testing again
-6. Try to implement all the emulation pland available.
+6. Try to implement all the emulation plan available.
 7. Create emulation plans for unknow attack types or APT's that are active.
 8. Contribute to mitre
