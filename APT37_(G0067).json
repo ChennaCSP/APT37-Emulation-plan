@@ -1,3 +1,5 @@
+//Reference: Mitre ATT&CK project
+
 {
 	"name": "APT37 (G0067)",
 	"versions": {
